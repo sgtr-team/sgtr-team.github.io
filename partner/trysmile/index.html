@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trysmile.dev | Официальный партнёр SGTR Team</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        :root {
+            --primary: #4dabf7;
+            --dark-bg: #121212;
+            --card-bg: #1a1a1a;
+            --text: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .partner-header {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(45deg, #1a237e, #0d47a1);
+            position: relative;
+        }
+
+        .partner-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            margin: 2rem auto;
+        }
+
+        .badge {
+            background: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .projects-showcase {
+            margin: 4rem 0;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: #000;
+        }
+
+        @media (max-width: 768px) {
+            .partner-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="partner-header">
+        <img src="https://avatars.githubusercontent.com/u/205192758?v=4" alt="trysmile" class="partner-avatar">
+        <h1>trysmile.dev</h1>
+        <div class="badge">Официальный технический партнёр</div>
+        <p>Full-stack разработчик & UI/UX дизайнер</p>
+    </header>
+
+    <div class="container">
+        <section class="skills-grid">
+            <div class="skill-card">
+                <h3>🛠 Технологический стек</h3>
+                <ul>
+                    <li>Python/JavaScript</li>
+                    <li>React/Flask</li>
+                    <li>Docker/AWS</li>
+                    <li>Figma/Adobe XD</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>🏆 Достижения</h3>
+                <ul>
+                    <li>200+ коммитов в SGTR</li>
+                    <li>Автор системы предложок</li>
+                    <li>Главный архитектор SGTR Messenger</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects-showcase">
+            <h2>Ключевые проекты</h2>
+            <div class="project-card">
+                <h3>SGTR Messenger</h3>
+                <p>Реализация серверной части и клиентского GUI</p>
+                <a href="https://trytosmilepls.github.io/partner/sgtr/projects/msgr/">Исходный код →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Система предложок</h3>
+                <p>Telegram-бот с интеграцией в GitHub Issues</p>
+                <a href="https://t.me/sgtr_triker_bot">Перейти к боту →</a>
+            </div>
+        </section>
+            <section class="social-links">
+				<a href="https://github.com/trytosmilepls" target="_blank" rel="noopener noreferrer">
+					<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="social-icon">
+				</a>
+				<a href="https://t.me/trytosmileplsdev" target="_blank" rel="noopener noreferrer">
+					<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" class="social-icon">
+				</a>
+				<a href="https://youtube.com/@trytosmilepls" target="_blank" rel="noopener noreferrer">
+					<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon">
+				</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 SGTR Team. Все права защищены</p>
+        <p>Персональная партнёрская страница trysmile.dev</p>
+    </footer>
+</body>
+</html>

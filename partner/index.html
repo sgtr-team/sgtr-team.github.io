@@ -64,6 +64,8 @@
             font-weight: bold;
             transition: transform 0.3s;
             margin: 2rem 0;
+            cursor: pointer;
+            border: none;
         }
 
         .cta-button:hover {
@@ -77,6 +79,44 @@
             margin-top: 4rem;
         }
 
+        /* Стили для уведомления */
+        .notification {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff4444;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+            opacity: 0;
+            animation: slideIn 0.5s forwards, fadeOut 0.5s 2.5s forwards;
+            z-index: 1000;
+        }
+
+        @keyframes slideIn {
+            from {
+                bottom: -100px;
+                opacity: 0;
+            }
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+            to {
+                bottom: -100px;
+                opacity: 0;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -84,6 +124,12 @@
             
             .header h1 {
                 font-size: 1.8rem;
+            }
+            
+            .notification {
+                width: 90%;
+                text-align: center;
+                padding: 1rem;
             }
         }
     </style>
@@ -126,7 +172,7 @@
                 <li>Начните использовать преимущества</li>
             </ol>
             
-            <a href="mailto:sgtr.team@yandex.com" class="cta-button">Начать регистрацию</a>
+            <button class="cta-button" onclick="showNotification()">Начать регистрацию</button>
         </div>
     </div>
 
@@ -134,5 +180,19 @@
         <div class="copyright">© 2025 SGTR Team. Все права защищены</div>
         <div class="creator">Создано <a href="https://trytosmilepls.github.io" target="_blank" style="color: var(--primary-color);">trysmile.dev</a></div>
     </footer>
+
+    <script>
+        function showNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = 'Извините, на данный момент партнёрская программа закрыта.';
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
