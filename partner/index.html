@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGTR Partner Program</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        :root {
+            --primary-color: #4dabf7;
+            --bg-color: #121212;
+            --card-bg: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: white;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(45deg, #1a237e, #0d47a1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .partner-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            background: #252525;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s;
+            margin: 2rem 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #000;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Партнёрская программа SGTR</h1>
+        <p>Стань частью нашего сообщества и получай преимущества</p>
+    </header>
+
+    <div class="container">
+        <div class="partner-card">
+            <h2>О программе</h2>
+            <p>Присоединяйтесь к нашей партнёрской сети и получите:</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>💼 Эксклюзивные материалы</h3>
+                    <p>Доступ к уникальным ресурсам и обучающим материалам</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>📈 Статистика и аналитика</h3>
+                    <p>Подробные отчеты о вашей деятельности</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🎁 Бонусная система</h3>
+                    <p>Вознаграждения за активное участие</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="partner-card">
+            <h2>Как стать партнёром</h2>
+            <ol>
+                <li>Заполните регистрационную форму</li>
+                <li>Пройдите проверку аккаунта</li>
+                <li>Активируйте партнёрский доступ</li>
+                <li>Начните использовать преимущества</li>
+            </ol>
+            
+            <a href="mailto:sgtr.team@yandex.com" class="cta-button">Начать регистрацию</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">© 2025 SGTR Team. Все права защищены</div>
+        <div class="creator">Создано <a href="https://trytosmilepls.github.io" target="_blank" style="color: var(--primary-color);">trysmile.dev</a></div>
+    </footer>
+</body>
+</html>
