@@ -1,77 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGTR Team | Главная</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <title>SGTR Team</title>
     <style>
+        :root {
+            --primary: #4dabf7;
+            --dark-bg: #121212;
+            --card-bg: #1a1a1a;
+            --text: #ffffff;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
         }
-        
-        .content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+
+        .hero {
             text-align: center;
-            padding: 20px;
+            padding: 8rem 2rem;
+            background: linear-gradient(45deg, #1a237e, #0d47a1);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .main-text {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1s ease-in;
         }
-        
-        .sub-text {
-            font-size: 1.5rem;
-            opacity: 0.8;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
-        
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline {
+            background: none;
+            border: 2px solid var(--primary);
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #1a1a1a;
+            padding: 3rem;
+            background: #000000;
+            margin-top: 5rem;
         }
-        
-        .copyright {
-            margin-bottom: 0.5rem;
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        .creator {
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-        
-        a {
-            color: #4dabf7;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="main-text">SGTR Team</div>
-        <div class="sub-text">In progress...</div>
+    <section class="hero">
+        <h1>Добро пожаловать в SGTR Team</h1>
+        <p>Создаём будущее через технологии и креатив</p>
+        <div style="margin-top: 2rem;">
+            <a href="/partner" class="btn">Стать партнёром</a>
+            <a href="/bio" class="btn btn-outline">Наша команда</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="grid">
+            <div class="card">
+                <h2>🛠 Наши проекты</h2>
+                <p>Разработка инновационных решений в области:</p>
+                <ul>
+                    <li>Веб-технологий</li>
+                    <li>Игровой индустрии</li>
+                    <li>Искусственного интеллекта</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🌟 Преимущества</h2>
+                <ul>
+                    <li>Опытная команда</li>
+                    <li>Индивидуальный подход</li>
+                    <li>Современные технологии</li>
+                    <li>Прозрачность работы</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="social-links">
+            <a href="/discord" class="btn">
+                <img src="discord-icon.svg" alt="Discord" style="height: 24px;">
+                Discord
+            </a>
+            <a href="/telegram" class="btn">
+                <img src="telegram-icon.svg" alt="Telegram" style="height: 24px;">
+                Telegram
+            </a>
+            <a href="/youtube" class="btn">
+                <img src="youtube-icon.svg" alt="YouTube" style="height: 24px;">
+                YouTube
+            </a>
+        </section>
     </div>
-    
+
     <footer>
-        <div class="copyright">© 2025 SGTR Team. Все права защищены.</div>
-        <div class="creator">Created by <a href="https://trytosmilepls.github.io/" target="_blank">trysmile.dev</a></div>
+        <div class="copyright">© 2024 SGTR Team. Все права защищены</div>
+        <div style="margin-top: 1rem;">
+            Created by <a href="https://trytosmilepls.github.io" target="_blank" style="color: var(--primary);">trysmile.dev</a>
+        </div>
     </footer>
 </body>
 </html>
