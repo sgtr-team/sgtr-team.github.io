@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join SGTR Team</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        :root {
+            --primary: #4dabf7;
+            --dark-bg: #121212;
+            --card-bg: #1a1a1a;
+            --text: #ffffff;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff4444;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+            opacity: 0;
+            animation: slideIn 0.5s forwards, fadeOut 0.5s 2.5s forwards;
+            z-index: 1000;
+        }
+
+        @keyframes slideIn {
+            from { bottom: -100px; opacity: 0; }
+            to { bottom: 30px; opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { bottom: 30px; opacity: 1; }
+            to { bottom: -100px; opacity: 0; }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(45deg, #1a237e, #0d47a1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            flex: 1;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(77,171,247,0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #000000;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .container { padding: 0 1rem; }
+            .notification { width: 90%; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>Присоединиться к SGTR Team</h1>
+        <p>Стань частью инновационной команды</p>
+    </section>
+
+    <div class="container">
+        <div class="card">
+            <h2>📨 Как подать заявку</h2>
+            <ul>
+                <li>Нажмите на кнопку ниже чтобы перейти в Discord</li>
+                <li>Оставьте заявку в специальном канале</li>
+                <li>Ожидайте обратной связи от нашей команды</li>
+            </ul>
+            
+            <!-- Реальная ссылка всегда в HTML -->
+            <a id="discordBtn" href="https://discord.gg/KKuwp5FWtH" class="btn">
+                <img src="https://cdn.simpleicons.org/discord/white" 
+                     alt="Discord" 
+                     style="height: 24px;">
+                Перейти в Discord
+            </a>
+
+            <div style="margin-top: 2rem; color: #cccccc;">
+                <small>⚠️ После завершения набора заявок канал будет архивирован</small>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">© 2025 SGTR Team. Все права защищены</div>
+        <div style="margin-top: 1rem;">
+            Created by <a href="https://trytosmilepls.github.io" target="_blank" style="color: var(--primary);">trysmile.dev</a>
+        </div>
+    </footer>
+
+    <script>
+        // Состояние набора
+        const opened = false; // true - открыто, false - закрыто
+
+        // Функция уведомления
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        // Обработчик кнопки
+        document.getElementById('discordBtn').addEventListener('click', (e) => {
+            if (!opened) {
+                e.preventDefault(); // Блокируем переход
+                showNotification('❌ Набор временно закрыт! Попробуйте позже.');
+            }
+            // Если opened=true - переход произойдет автоматически
+        });
+    </script>
+</body>
+</html>
